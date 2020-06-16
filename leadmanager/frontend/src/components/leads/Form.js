@@ -23,6 +23,11 @@ class Form extends Component {
         const {name, email, message} = this.state;
         const lead = {name, email, message};
         this.props.addLead(lead)
+        this.setState({
+            name: "",
+            email: "",
+            message: ""
+        })
     }
 
     render() {
@@ -58,7 +63,6 @@ class Form extends Component {
                             <label>Message</label>
                             <textarea
                                 className="form-control"
-                                type="text"
                                 name="message"
                                 onChange={this.onChange}
                                 value={message}
